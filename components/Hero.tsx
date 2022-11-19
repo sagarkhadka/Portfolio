@@ -13,10 +13,12 @@ const Hero = () => {
       delay: .5,
       duration: 1,
       y: 75,
+      autoAlpha: 0,
     }, {
       delay: .5,
       y: 0,
       ease: 'power3.easeInOut',
+      autoAlpha: 1,
       stagger: {
         amount: 0.5,
       }
