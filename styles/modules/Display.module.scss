@@ -1,19 +1,24 @@
 .display_section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  // grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   .display_card {
-    background: coral;
+    // background: coral;
     height: 40vh;
     position: relative;
+    overflow: hidden;
 
-    &:nth-of-type(2) {
-      background: yellow;
-    }
+    // &:nth-of-type(2) {
+    //   background: yellow;
+    // }
     
-    &:nth-of-type(3) {
-      background: skyblue;
-    }
+    // &:nth-of-type(3) {
+    //   background: skyblue;
+    // }
 
     .overlay {
       background: black;

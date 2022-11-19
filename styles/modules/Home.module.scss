@@ -24,11 +24,11 @@
       margin: 0 10%;
 
       .line_wrap {
-        line-height: 70px;
+        // line-height: 75px;
         overflow: hidden;
 
         .line {
-          font-size: 65px;
+          font-size: calc(1rem + 3.5vw);
         }
       }
     }
