@@ -1,10 +1,13 @@
 .hero_section {
   background: white;
   height: 60vh;
+  height: calc(var(--vh, 1vh) * 60);
 
   .hero_top {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.3rem;
     height: 100%;
     position: relative;
 
@@ -19,7 +22,8 @@
 
     .hero_title {
       // color: rgb(80, 255, 159);
-      color: orange;
+      color: white;
+      mix-blend-mode: difference;
       z-index: 2;
       margin: 0 10%;
 
@@ -28,9 +32,15 @@
         overflow: hidden;
 
         .line {
-          font-size: calc(1rem + 3.5vw);
+          font-size: calc(1rem + 2.3vw);
         }
       }
+    }
+
+    .cta {
+      margin: 0 10%;
+      font-size: 18px;
+      color: black;
     }
   }
 

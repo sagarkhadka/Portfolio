@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import styles from '../styles/modules/Home.module.scss'
 import { gsap } from 'gsap'
 
@@ -7,26 +7,28 @@ const Hero = () => {
   let line2 = useRef(null)
   let overlay = useRef(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const tl = gsap.timeline()
-    tl.fromTo([line1, line2], {
-      delay: .5,
-      duration: 1,
-      y: 75,
-      autoAlpha: 0,
-    }, {
-      delay: .5,
-      y: 0,
-      ease: 'power3.easeInOut',
-      autoAlpha: 1,
-      stagger: {
-        amount: 0.5,
-      }
-    }).to(overlay, {
-      duration: 1,
-      height: 0,
-      ease: 'power3',
+    let ctx = gsap.context(() => {
+      tl.from([line1, line2], {
+        duration: 1,
+        delay: .5,
+        y: 85,
+        skewY: 5,
+        ease: 'power3.easeInOut',
+        autoAlpha: 0,
+        stagger: {
+          amount: 0.5,
+        }
+      }).to(overlay, {
+        duration: 1,
+        height: 0,
+        ease: 'power3.easeInOut',
+      })
+
     })
+    return () => ctx.revert()
+
   }, [line1, line2, overlay]);
   return (
     <>
@@ -41,6 +43,7 @@ const Hero = () => {
               <div ref={(el: any) => (line2 = el)} className={styles.line}>Frontend Developer</div>
             </div>
           </h1>
+          <span className={styles.cta}>Contact</span>
         </div>
           {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, laborum a? Sunt cupiditate aliquid error. Vero necessitatibus eos vel, aspernatur quibusdam totam delectus! Voluptatum deleniti distinctio, ex adipisci magni pariatur!</p> */}
 

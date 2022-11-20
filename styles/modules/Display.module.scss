@@ -9,6 +9,7 @@
   .display_card {
     // background: coral;
     height: 40vh;
+    height: calc(var(--dvh, 1vh) * 40);
     position: relative;
     overflow: hidden;
 

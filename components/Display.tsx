@@ -19,7 +19,7 @@ const Display = () => {
     tl.to([box1, box2, box3], {
       duration: 2,
       ease: 'power3.inOut',
-      delay: 1.5,
+      delay: 2,
       width: 0,
       stagger: {
         amount: 0.5,
