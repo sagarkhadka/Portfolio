@@ -1,10 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
+@font-face {
+  font-family: 'Integral CF';
+  src: url(../public/font/IntegralCF-ExtraBold.woff2);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat';
+  visibility: hidden;
+}
+
+h1, h2, h3 {
+  font-family: Integral CF;
 }
 
 a {
